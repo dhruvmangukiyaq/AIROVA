@@ -1,17 +1,17 @@
 // @ts-nocheck
-// open-next.config.ts — OpenNext Cloudflare adapter configuration
-// @ts-nocheck: this file is processed by opennextjs-cloudflare, not Next.js TypeScript
-
 const config = {
+  buildCommand: "npm run build-next",
   default: {
     override: {
       wrapper: "cloudflare-node",
       converter: "edge",
+      proxyExternalRequest: "fetch",
       incrementalCache: "dummy",
       tagCache: "dummy",
       queue: "dummy",
     },
   },
+  edgeExternals: ["node:crypto"],
   middleware: {
     external: true,
     override: {
