@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "airova",
+  "compatibility_date": "2026-10-06",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true
+    }
+  },
+  "vars": {
+    "NEXT_PUBLIC_SITE_URL": "https://airova.workers.dev",
+    "NEXT_PUBLIC_SITE_NAME": "AIROVA FOOTWEAR"
+  }
+}
