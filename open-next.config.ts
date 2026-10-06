@@ -1,11 +1,12 @@
-import type { OpenNextConfig } from "@opennextjs/cloudflare";
+// open-next.config.ts
+// OpenNext Cloudflare adapter configuration
+// Disables WORKER_SELF_REFERENCE service binding to avoid Cloudflare error code 10143
 
-const config: OpenNextConfig = {
+const config = {
   default: {
     override: {
       wrapper: "cloudflare-node",
       converter: "edge",
-      // Disable self-referencing worker binding (causes deploy error)
       incrementalCache: "dummy",
       tagCache: "dummy",
       queue: "dummy",
