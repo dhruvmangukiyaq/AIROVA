@@ -3,8 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ChevronRight } from "lucide-react";
-import { db } from "@/lib/db";
-import { getFilterOptions, listProducts } from "@/lib/catalog";
+import { getCollection, getFilterOptions, listProducts } from "@/lib/catalog";
 import { SITE } from "@/lib/site";
 import { ProductCard } from "@/components/product/product-card";
 import { FilterPanel } from "@/components/shop/filter-panel";
@@ -13,10 +12,6 @@ import { parseShopParams, toSearchString } from "@/lib/shop-params";
 interface Props {
   params: Promise<{ slug: string }>;
   searchParams: Promise<Record<string, string | string[] | undefined>>;
-}
-
-async function getCollection(slug: string) {
-  return db.collection.findUnique({ where: { slug }, include: { _count: { select: { products: true } } } });
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

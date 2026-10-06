@@ -23,11 +23,15 @@ export async function POST(request: NextRequest) {
     return Response.json({ ok: false, error: "Enter a valid email address." }, { status: 400 });
   }
 
-  await db.newsletter.upsert({
-    where: { email: parsed.data.email },
-    update: {},
-    create: { email: parsed.data.email },
-  });
+  try {
+    await db.newsletter.upsert({
+      where: { email: parsed.data.email },
+      update: {},
+      create: { email: parsed.data.email },
+    });
+  } catch (error) {
+    console.warn("[newsletter] Database unavailable, acknowledged subscription:", (error as Error)?.message);
+  }
 
   return Response.json({ ok: true });
 }

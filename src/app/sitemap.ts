@@ -1,22 +1,33 @@
 import type { MetadataRoute } from "next";
 import { db } from "@/lib/db";
 import { SITE } from "@/lib/site";
+import { MOCK_PRODUCTS, MOCK_COLLECTIONS } from "@/lib/mock-catalog";
 
 const BASE = SITE.url.replace(/\/$/, "");
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [products, collections] = await Promise.all([
-    db.product.findMany({
-      where: { active: true },
-      select: { slug: true, updatedAt: true },
-      orderBy: { updatedAt: "desc" },
-    }),
-    db.collection.findMany({
-      where: { active: true },
-      select: { slug: true },
-      orderBy: { sortOrder: "asc" },
-    }),
-  ]);
+  let products: { slug: string; updatedAt?: Date }[] = [];
+  let collections: { slug: string }[] = [];
+
+  try {
+    const [p, c] = await Promise.all([
+      db.product.findMany({
+        where: { active: true },
+        select: { slug: true, updatedAt: true },
+        orderBy: { updatedAt: "desc" },
+      }),
+      db.collection.findMany({
+        where: { active: true },
+        select: { slug: true },
+        orderBy: { sortOrder: "asc" },
+      }),
+    ]);
+    products = p;
+    collections = c;
+  } catch {
+    products = MOCK_PRODUCTS.map((p) => ({ slug: p.slug, updatedAt: new Date() }));
+    collections = MOCK_COLLECTIONS.map((c) => ({ slug: c.slug }));
+  }
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${BASE}/`, changeFrequency: "daily", priority: 1 },

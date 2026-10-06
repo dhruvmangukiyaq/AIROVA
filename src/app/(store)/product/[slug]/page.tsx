@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronRight, PackageCheck, RefreshCcw, Ruler } from "lucide-react";
-import { db } from "@/lib/db";
 import {
   getProduct,
   getRelatedProducts,
   getReviews,
   getReviewSummary,
+  getSiblingColors,
 } from "@/lib/catalog";
 import { SITE } from "@/lib/site";
 import { STORE } from "@/lib/commerce";
@@ -55,30 +55,12 @@ export default async function ProductPage({ params }: Props) {
 
   if (!product) notFound();
 
-  const [related, siblings, reviews, summary] = await Promise.all([
+  const [related, relatedColors, reviews, summary] = await Promise.all([
     getRelatedProducts(product, 4),
-    db.product.findMany({
-      where: {
-        active: true,
-        id: { not: product.id },
-        OR: [
-          { collectionSlug: product.collectionSlug ?? "___none___" },
-          { categorySlug: product.categorySlug },
-        ],
-      },
-      select: { slug: true, name: true, colorName: true, images: true },
-      take: 8,
-    }),
+    getSiblingColors(product, 8),
     getReviews(product.id),
     getReviewSummary(product.id),
   ]);
-
-  const relatedColors = siblings.map((s) => ({
-    slug: s.slug,
-    name: s.name,
-    colorName: s.colorName,
-    image: (JSON.parse(s.images || "[]") as string[])[0] ?? "",
-  }));
 
   const pct = discountPercent(product.price, product.mrp);
   const breadcrumb = [
