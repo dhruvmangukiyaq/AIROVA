@@ -1,6 +1,6 @@
-// open-next.config.ts
-// OpenNext Cloudflare adapter configuration
-// Disables WORKER_SELF_REFERENCE service binding to avoid Cloudflare error code 10143
+// @ts-nocheck
+// open-next.config.ts — OpenNext Cloudflare adapter configuration
+// @ts-nocheck: this file is processed by opennextjs-cloudflare, not Next.js TypeScript
 
 const config = {
   default: {
