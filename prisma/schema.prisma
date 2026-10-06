@@ -1,14 +1,13 @@
 // AIROVA FOOTWEAR — data model.
-// Local dev uses SQLite; switch `provider` to "postgresql" and set DATABASE_URL
-// (e.g. Supabase) for production/Vercel. JSON-ish columns are stored as String
-// and parsed in the app because SQLite has no native JSON type in Prisma.
+// MongoDB Atlas (Prisma 6.x mongodb provider).
+// IDs use MongoDB ObjectId. JSON columns stored as String[] / Json.
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
@@ -58,7 +57,7 @@ enum DiscountType {
 }
 
 model User {
-  id           String    @id @default(cuid())
+  id           String    @id @default(auto()) @map("_id") @db.ObjectId
   email        String    @unique
   name         String
   phone        String?
@@ -76,17 +75,17 @@ model User {
 }
 
 model Session {
-  id        String   @id @default(cuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   token     String   @unique
-  userId    String
+  userId    String   @db.ObjectId
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   expiresAt DateTime
   createdAt DateTime @default(now())
 }
 
 model Address {
-  id        String  @id @default(cuid())
-  userId    String
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String  @db.ObjectId
   user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
   label     String  @default("Home")
   name      String
@@ -101,7 +100,7 @@ model Address {
 }
 
 model Category {
-  id          String    @id @default(cuid())
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
   name        String    @unique
   slug        String    @unique
   description String?
@@ -111,7 +110,7 @@ model Category {
 }
 
 model Collection {
-  id          String    @id @default(cuid())
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
   name        String    @unique
   slug        String    @unique
   tagline     String?
@@ -123,41 +122,41 @@ model Collection {
 }
 
 model Product {
-  id          String       @id @default(cuid())
-  name        String
-  slug        String       @unique
-  gender      Gender       @default(UNISEX)
-  category    Category     @relation(fields: [categorySlug], references: [slug])
-  categorySlug String
-  collection  Collection?  @relation(fields: [collectionSlug], references: [slug])
+  id             String      @id @default(auto()) @map("_id") @db.ObjectId
+  name           String
+  slug           String      @unique
+  gender         Gender      @default(UNISEX)
+  category       Category    @relation(fields: [categorySlug], references: [slug])
+  categorySlug   String
+  collection     Collection? @relation(fields: [collectionSlug], references: [slug])
   collectionSlug String?
-  description String
-  features    String       @default("[]") // JSON string[]
-  material    String?
-  price       Int // selling price in INR
-  mrp         Int // maximum retail price in INR
-  colorName   String // primary colour label, e.g. "Navy"
-  colors      String       @default("[]") // JSON { name, hex }[]
-  images      String       @default("[]") // JSON string[] (primary first)
-  badge       String? // "New" | "Best Seller" | "Sale"
-  featured    Boolean      @default(false)
-  bestSeller  Boolean      @default(false)
-  newArrival  Boolean      @default(false)
-  active      Boolean      @default(true)
-  rating      Float        @default(0)
-  reviewCount Int          @default(0)
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
+  description    String
+  features       String      @default("[]") // JSON string[]
+  material       String?
+  price          Int // selling price in INR
+  mrp            Int // maximum retail price in INR
+  colorName      String // primary colour label, e.g. "Navy"
+  colors         String      @default("[]") // JSON { name, hex }[]
+  images         String      @default("[]") // JSON string[] (primary first)
+  badge          String? // "New" | "Best Seller" | "Sale"
+  featured       Boolean     @default(false)
+  bestSeller     Boolean     @default(false)
+  newArrival     Boolean     @default(false)
+  active         Boolean     @default(true)
+  rating         Float       @default(0)
+  reviewCount    Int         @default(0)
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
 
-  variants  Variant[]
+  variants   Variant[]
   orderItems OrderItem[]
-  reviews   Review[]
-  wishlist  Wishlist[]
+  reviews    Review[]
+  wishlist   Wishlist[]
 }
 
 model Variant {
-  id        String  @id @default(cuid())
-  productId String
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  productId String  @db.ObjectId
   product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
   color     String
   size      String // UK/India size as string: "5".."11"
@@ -169,40 +168,40 @@ model Variant {
 }
 
 model Order {
-  id                String        @id @default(cuid())
-  number            String        @unique // human-readable, e.g. AIV-20261006-0001
-  userId            String?
-  user              User?         @relation(fields: [userId], references: [id])
-  email             String
-  phone             String
-  status            OrderStatus   @default(PLACED)
-  paymentMethod     PaymentMethod
-  paymentStatus     PaymentStatus @default(PENDING)
-  paymentId         String?
-  subtotal          Int
-  discount          Int           @default(0)
-  shipping          Int           @default(0)
-  total             Int
-  couponCode        String?
+  id            String        @id @default(auto()) @map("_id") @db.ObjectId
+  number        String        @unique // human-readable, e.g. AIV-20261006-0001
+  userId        String?       @db.ObjectId
+  user          User?         @relation(fields: [userId], references: [id])
+  email         String
+  phone         String
+  status        OrderStatus   @default(PLACED)
+  paymentMethod PaymentMethod
+  paymentStatus PaymentStatus @default(PENDING)
+  paymentId     String?
+  subtotal      Int
+  discount      Int           @default(0)
+  shipping      Int           @default(0)
+  total         Int
+  couponCode    String?
   // delivery address snapshot
-  addrName          String
-  addrPhone         String
-  addrLine1         String
-  addrLine2         String?
-  addrCity          String
-  addrState         String
-  addrPincode       String
-  note              String?
-  placedAt          DateTime      @default(now())
-  updatedAt         DateTime      @updatedAt
-  items             OrderItem[]
+  addrName      String
+  addrPhone     String
+  addrLine1     String
+  addrLine2     String?
+  addrCity      String
+  addrState     String
+  addrPincode   String
+  note          String?
+  placedAt      DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  items         OrderItem[]
 }
 
 model OrderItem {
-  id        String  @id @default(cuid())
-  orderId   String
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  orderId   String  @db.ObjectId
   order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
-  productId String
+  productId String  @db.ObjectId
   product   Product @relation(fields: [productId], references: [id])
   name      String
   slug      String
@@ -217,7 +216,7 @@ model OrderItem {
 }
 
 model Coupon {
-  id          String       @id @default(cuid())
+  id          String       @id @default(auto()) @map("_id") @db.ObjectId
   code        String       @unique
   description String?
   type        DiscountType
@@ -232,10 +231,10 @@ model Coupon {
 }
 
 model Review {
-  id        String   @id @default(cuid())
-  productId String
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  productId String   @db.ObjectId
   product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
-  userId    String?
+  userId    String?  @db.ObjectId
   user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
   name      String
   rating    Int
@@ -249,10 +248,10 @@ model Review {
 }
 
 model Wishlist {
-  id        String   @id @default(cuid())
-  userId    String
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  productId String
+  productId String   @db.ObjectId
   product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
   createdAt DateTime @default(now())
 
@@ -260,7 +259,7 @@ model Wishlist {
 }
 
 model Newsletter {
-  id        String   @id @default(cuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   email     String   @unique
   createdAt DateTime @default(now())
 }
