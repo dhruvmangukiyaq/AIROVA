@@ -1,0 +1,15 @@
+{
+  "name": "AIROVA FOOTWEAR",
+  "short_name": "AIROVA",
+  "description": "Premium sneakers, sports shoes and loafers for men and women in India.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0b0c",
+  "theme_color": "#0b0b0c",
+  "orientation": "portrait-primary",
+  "categories": ["shopping", "lifestyle"],
+  "icons": [
+    { "src": "/images/brand/airova-icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

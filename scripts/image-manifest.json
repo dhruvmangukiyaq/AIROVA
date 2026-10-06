@@ -1,0 +1,437 @@
+[
+  {
+    "index": 1,
+    "src": "WhatsApp Image 2026-10-05 at 11.17.25 PM.jpeg",
+    "slug": "aqua-water-edition-sports-shoe",
+    "n": "1",
+    "webp": "images/products/aqua-water-edition-sports-shoe-1.webp",
+    "card": "images/products/aqua-water-edition-sports-shoe-1-card.webp",
+    "thumb": "images/products/aqua-water-edition-sports-shoe-1-thumb.webp",
+    "orig": "822x732",
+    "size": [
+      822,
+      732
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 2,
+    "src": "WhatsApp Image 2026-10-05 at 11.24.10 PM(1).jpeg",
+    "slug": "aqua-water-edition-sports-shoe",
+    "n": "2",
+    "webp": "images/products/aqua-water-edition-sports-shoe-2.webp",
+    "card": "images/products/aqua-water-edition-sports-shoe-2-card.webp",
+    "thumb": "images/products/aqua-water-edition-sports-shoe-2-thumb.webp",
+    "orig": "1051x563",
+    "size": [
+      1051,
+      563
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 3,
+    "src": "WhatsApp Image 2026-10-05 at 11.24.11 PM(1).jpeg",
+    "slug": "aqua-water-edition-sports-shoe",
+    "n": "3",
+    "webp": "images/products/aqua-water-edition-sports-shoe-3-poster.webp",
+    "card": "images/products/aqua-water-edition-sports-shoe-3-poster-card.webp",
+    "thumb": "images/products/aqua-water-edition-sports-shoe-3-poster-thumb.webp",
+    "orig": "1254x1254",
+    "size": [
+      1254,
+      1254
+    ],
+    "kind": "poster"
+  },
+  {
+    "index": 4,
+    "src": "WhatsApp Image 2026-10-05 at 11.24.11 PM.jpeg",
+    "slug": "aqua-water-edition-sports-shoe",
+    "n": "4",
+    "webp": "images/products/aqua-water-edition-sports-shoe-4-poster.webp",
+    "card": "images/products/aqua-water-edition-sports-shoe-4-poster-card.webp",
+    "thumb": "images/products/aqua-water-edition-sports-shoe-4-poster-thumb.webp",
+    "orig": "1254x1254",
+    "size": [
+      1254,
+      1254
+    ],
+    "kind": "poster"
+  },
+  {
+    "index": 5,
+    "src": "WhatsApp Image 2026-10-05 at 11.25.18 PM.jpeg",
+    "slug": "flare-fire-edition-sports-shoe",
+    "n": "1",
+    "webp": "images/products/flare-fire-edition-sports-shoe-1.webp",
+    "card": "images/products/flare-fire-edition-sports-shoe-1-card.webp",
+    "thumb": "images/products/flare-fire-edition-sports-shoe-1-thumb.webp",
+    "orig": "1254x1254",
+    "size": [
+      1254,
+      1254
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 6,
+    "src": "WhatsApp Image 2026-10-05 at 11.25.19 PM(1).jpeg",
+    "slug": "flare-fire-edition-sports-shoe",
+    "n": "2",
+    "webp": "images/products/flare-fire-edition-sports-shoe-2-poster.webp",
+    "card": "images/products/flare-fire-edition-sports-shoe-2-poster-card.webp",
+    "thumb": "images/products/flare-fire-edition-sports-shoe-2-poster-thumb.webp",
+    "orig": "1254x1254",
+    "size": [
+      1254,
+      1254
+    ],
+    "kind": "poster"
+  },
+  {
+    "index": 7,
+    "src": "WhatsApp Image 2026-10-05 at 11.25.19 PM.jpeg",
+    "slug": "flare-fire-edition-sports-shoe",
+    "n": "3",
+    "webp": "images/products/flare-fire-edition-sports-shoe-3-poster.webp",
+    "card": "images/products/flare-fire-edition-sports-shoe-3-poster-card.webp",
+    "thumb": "images/products/flare-fire-edition-sports-shoe-3-poster-thumb.webp",
+    "orig": "1254x1254",
+    "size": [
+      1254,
+      1254
+    ],
+    "kind": "poster"
+  },
+  {
+    "index": 8,
+    "src": "WhatsApp Image 2026-10-05 at 11.25.20 PM.jpeg",
+    "slug": "flare-fire-edition-sports-shoe",
+    "n": "4",
+    "webp": "images/products/flare-fire-edition-sports-shoe-4.webp",
+    "card": "images/products/flare-fire-edition-sports-shoe-4-card.webp",
+    "thumb": "images/products/flare-fire-edition-sports-shoe-4-thumb.webp",
+    "orig": "1254x1254",
+    "size": [
+      1254,
+      1254
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 9,
+    "src": "WhatsApp Image 2026-10-05 at 11.26.22 PM(1).jpeg",
+    "slug": "aero-air-edition-sneaker",
+    "n": "1",
+    "webp": "images/products/aero-air-edition-sneaker-1.webp",
+    "card": "images/products/aero-air-edition-sneaker-1-card.webp",
+    "thumb": "images/products/aero-air-edition-sneaker-1-thumb.webp",
+    "orig": "1021x691",
+    "size": [
+      1021,
+      691
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 10,
+    "src": "WhatsApp Image 2026-10-05 at 11.26.22 PM(2).jpeg",
+    "slug": "aero-air-edition-sneaker",
+    "n": "2",
+    "webp": "images/products/aero-air-edition-sneaker-2-poster.webp",
+    "card": "images/products/aero-air-edition-sneaker-2-poster-card.webp",
+    "thumb": "images/products/aero-air-edition-sneaker-2-poster-thumb.webp",
+    "orig": "1254x1254",
+    "size": [
+      1254,
+      1254
+    ],
+    "kind": "poster"
+  },
+  {
+    "index": 11,
+    "src": "WhatsApp Image 2026-10-05 at 11.26.22 PM.jpeg",
+    "slug": "aero-air-edition-sneaker",
+    "n": "3",
+    "webp": "images/products/aero-air-edition-sneaker-3.webp",
+    "card": "images/products/aero-air-edition-sneaker-3-card.webp",
+    "thumb": "images/products/aero-air-edition-sneaker-3-thumb.webp",
+    "orig": "793x740",
+    "size": [
+      793,
+      740
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 12,
+    "src": "WhatsApp Image 2026-10-05 at 11.26.23 PM(1).jpeg",
+    "slug": "aero-air-edition-sneaker",
+    "n": "4",
+    "webp": "images/products/aero-air-edition-sneaker-4-poster.webp",
+    "card": "images/products/aero-air-edition-sneaker-4-poster-card.webp",
+    "thumb": "images/products/aero-air-edition-sneaker-4-poster-thumb.webp",
+    "orig": "1254x1254",
+    "size": [
+      1254,
+      1254
+    ],
+    "kind": "poster"
+  },
+  {
+    "index": 13,
+    "src": "WhatsApp Image 2026-10-05 at 11.26.23 PM.jpeg",
+    "slug": "aero-air-edition-sneaker",
+    "n": "5",
+    "webp": "images/products/aero-air-edition-sneaker-5-poster.webp",
+    "card": "images/products/aero-air-edition-sneaker-5-poster-card.webp",
+    "thumb": "images/products/aero-air-edition-sneaker-5-poster-thumb.webp",
+    "orig": "1254x1254",
+    "size": [
+      1254,
+      1254
+    ],
+    "kind": "poster"
+  },
+  {
+    "index": 14,
+    "src": "WhatsApp Image 2026-10-05 at 11.27.44 PM(1).jpeg",
+    "slug": "cinder-ash-edition-sports-shoe",
+    "n": "1",
+    "webp": "images/products/cinder-ash-edition-sports-shoe-1-poster.webp",
+    "card": "images/products/cinder-ash-edition-sports-shoe-1-poster-card.webp",
+    "thumb": "images/products/cinder-ash-edition-sports-shoe-1-poster-thumb.webp",
+    "orig": "1254x1254",
+    "size": [
+      1254,
+      1254
+    ],
+    "kind": "poster"
+  },
+  {
+    "index": 15,
+    "src": "WhatsApp Image 2026-10-05 at 11.27.44 PM(2).jpeg",
+    "slug": "cinder-ash-edition-sports-shoe",
+    "n": "2",
+    "webp": "images/products/cinder-ash-edition-sports-shoe-2-poster.webp",
+    "card": "images/products/cinder-ash-edition-sports-shoe-2-poster-card.webp",
+    "thumb": "images/products/cinder-ash-edition-sports-shoe-2-poster-thumb.webp",
+    "orig": "1254x1254",
+    "size": [
+      1254,
+      1254
+    ],
+    "kind": "poster"
+  },
+  {
+    "index": 16,
+    "src": "WhatsApp Image 2026-10-05 at 11.27.44 PM.jpeg",
+    "slug": "cinder-ash-edition-sports-shoe",
+    "n": "3",
+    "webp": "images/products/cinder-ash-edition-sports-shoe-3.webp",
+    "card": "images/products/cinder-ash-edition-sports-shoe-3-card.webp",
+    "thumb": "images/products/cinder-ash-edition-sports-shoe-3-thumb.webp",
+    "orig": "810x751",
+    "size": [
+      810,
+      751
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 17,
+    "src": "WhatsApp Image 2026-10-05 at 11.27.45 PM.jpeg",
+    "slug": "cinder-ash-edition-sports-shoe",
+    "n": "4",
+    "webp": "images/products/cinder-ash-edition-sports-shoe-4-poster.webp",
+    "card": "images/products/cinder-ash-edition-sports-shoe-4-poster-card.webp",
+    "thumb": "images/products/cinder-ash-edition-sports-shoe-4-poster-thumb.webp",
+    "orig": "1254x1254",
+    "size": [
+      1254,
+      1254
+    ],
+    "kind": "poster"
+  },
+  {
+    "index": 18,
+    "src": "WhatsApp Image 2026-10-05 at 11.31.03 PM.jpeg",
+    "slug": "navy-denim-slip-on-loafer",
+    "n": "1",
+    "webp": "images/products/navy-denim-slip-on-loafer-1.webp",
+    "card": "images/products/navy-denim-slip-on-loafer-1-card.webp",
+    "thumb": "images/products/navy-denim-slip-on-loafer-1-thumb.webp",
+    "orig": "876x776",
+    "size": [
+      876,
+      776
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 19,
+    "src": "WhatsApp Image 2026-10-05 at 11.31.04 PM(1).jpeg",
+    "slug": "black-denim-slip-on-loafer",
+    "n": "1",
+    "webp": "images/products/black-denim-slip-on-loafer-1.webp",
+    "card": "images/products/black-denim-slip-on-loafer-1-card.webp",
+    "thumb": "images/products/black-denim-slip-on-loafer-1-thumb.webp",
+    "orig": "871x779",
+    "size": [
+      871,
+      779
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 20,
+    "src": "WhatsApp Image 2026-10-05 at 11.31.04 PM(2).jpeg",
+    "slug": "white-denim-slip-on-loafer",
+    "n": "1",
+    "webp": "images/products/white-denim-slip-on-loafer-1.webp",
+    "card": "images/products/white-denim-slip-on-loafer-1-card.webp",
+    "thumb": "images/products/white-denim-slip-on-loafer-1-thumb.webp",
+    "orig": "883x765",
+    "size": [
+      883,
+      765
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 21,
+    "src": "WhatsApp Image 2026-10-05 at 11.31.04 PM.jpeg",
+    "slug": "sky-blue-denim-slip-on-loafer",
+    "n": "1",
+    "webp": "images/products/sky-blue-denim-slip-on-loafer-1.webp",
+    "card": "images/products/sky-blue-denim-slip-on-loafer-1-card.webp",
+    "thumb": "images/products/sky-blue-denim-slip-on-loafer-1-thumb.webp",
+    "orig": "869x766",
+    "size": [
+      869,
+      766
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 22,
+    "src": "WhatsApp Image 2026-10-05 at 11.33.10 PM(1).jpeg",
+    "slug": "black-denim-low-top-sneaker",
+    "n": "1",
+    "webp": "images/products/black-denim-low-top-sneaker-1.webp",
+    "card": "images/products/black-denim-low-top-sneaker-1-card.webp",
+    "thumb": "images/products/black-denim-low-top-sneaker-1-thumb.webp",
+    "orig": "882x714",
+    "size": [
+      882,
+      714
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 23,
+    "src": "WhatsApp Image 2026-10-05 at 11.33.10 PM.jpeg",
+    "slug": "white-denim-low-top-sneaker",
+    "n": "1",
+    "webp": "images/products/white-denim-low-top-sneaker-1.webp",
+    "card": "images/products/white-denim-low-top-sneaker-1-card.webp",
+    "thumb": "images/products/white-denim-low-top-sneaker-1-thumb.webp",
+    "orig": "879x772",
+    "size": [
+      879,
+      772
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 24,
+    "src": "WhatsApp Image 2026-10-05 at 11.33.11 PM(1).jpeg",
+    "slug": "indigo-denim-low-top-sneaker",
+    "n": "1",
+    "webp": "images/products/indigo-denim-low-top-sneaker-1.webp",
+    "card": "images/products/indigo-denim-low-top-sneaker-1-card.webp",
+    "thumb": "images/products/indigo-denim-low-top-sneaker-1-thumb.webp",
+    "orig": "963x892",
+    "size": [
+      963,
+      892
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 25,
+    "src": "WhatsApp Image 2026-10-05 at 11.33.11 PM(2).jpeg",
+    "slug": "classic-blue-denim-low-top-sneaker",
+    "n": "1",
+    "webp": "images/products/classic-blue-denim-low-top-sneaker-1.webp",
+    "card": "images/products/classic-blue-denim-low-top-sneaker-1-card.webp",
+    "thumb": "images/products/classic-blue-denim-low-top-sneaker-1-thumb.webp",
+    "orig": "887x788",
+    "size": [
+      887,
+      788
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 26,
+    "src": "WhatsApp Image 2026-10-05 at 11.33.11 PM.jpeg",
+    "slug": "light-blue-denim-low-top-sneaker",
+    "n": "1",
+    "webp": "images/products/light-blue-denim-low-top-sneaker-1.webp",
+    "card": "images/products/light-blue-denim-low-top-sneaker-1-card.webp",
+    "thumb": "images/products/light-blue-denim-low-top-sneaker-1-thumb.webp",
+    "orig": "850x708",
+    "size": [
+      850,
+      708
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 27,
+    "src": "WhatsApp Image 2026-10-05 at 11.35.37 PM.jpeg",
+    "slug": "pink-denim-low-top-sneaker",
+    "n": "1",
+    "webp": "images/products/pink-denim-low-top-sneaker-1.webp",
+    "card": "images/products/pink-denim-low-top-sneaker-1-card.webp",
+    "thumb": "images/products/pink-denim-low-top-sneaker-1-thumb.webp",
+    "orig": "889x727",
+    "size": [
+      889,
+      727
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 28,
+    "src": "WhatsApp Image 2026-10-05 at 11.35.38 PM.jpeg",
+    "slug": "charcoal-denim-low-top-sneaker",
+    "n": "1",
+    "webp": "images/products/charcoal-denim-low-top-sneaker-1.webp",
+    "card": "images/products/charcoal-denim-low-top-sneaker-1-card.webp",
+    "thumb": "images/products/charcoal-denim-low-top-sneaker-1-thumb.webp",
+    "orig": "898x726",
+    "size": [
+      898,
+      726
+    ],
+    "kind": "shot"
+  },
+  {
+    "index": 29,
+    "src": "WhatsApp Image 2026-10-05 at 11.36.24 PM.jpeg",
+    "slug": "logo",
+    "n": "1",
+    "webp": "images/brand/airova-logo.webp",
+    "card": "images/brand/airova-logo-card.webp",
+    "thumb": "images/brand/airova-logo-thumb.webp",
+    "orig": "1254x1254",
+    "size": [
+      1254,
+      1254
+    ],
+    "kind": "shot"
+  }
+]
