@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react";
 import { getCollection, getFilterOptions, listProducts } from "@/lib/catalog";
 import { SITE } from "@/lib/site";
 import { ProductCard } from "@/components/product/product-card";
-import { FilterPanel } from "@/components/shop/filter-panel";
+import { FilterableLayout } from "@/components/shop/filterable-layout";
 import { parseShopParams, toSearchString } from "@/lib/shop-params";
 
 interface Props {
@@ -123,71 +123,67 @@ export default async function CollectionPage({ params, searchParams }: Props) {
       </header>
 
       <div className="shell pt-12">
-        <div className="grid gap-10 lg:grid-cols-[16.5rem_1fr] lg:gap-12">
-          <aside className="hidden lg:block">
-            <div className="sticky top-28 max-h-[calc(100vh-9rem)] overflow-y-auto pr-1 pb-8">
-              <FilterPanel params={filters} options={options} />
-            </div>
-          </aside>
-
-          <div>
-            <div className="flex items-center justify-between border-b border-line pb-4">
-              <p className="text-xs text-muted-foreground tabular-nums" aria-live="polite">
-                {result.total} {result.total === 1 ? "style" : "styles"}
+        <FilterableLayout
+          params={filters}
+          options={options}
+          leading={
+            <p className="text-xs text-muted-foreground tabular-nums" aria-live="polite">
+              {result.total} {result.total === 1 ? "style" : "styles"}
+            </p>
+          }
+          trailing={
+            <p className="text-xs text-muted-foreground">
+              Sorted by{" "}
+              {filters.sort === "price-asc"
+                ? "price, low to high"
+                : filters.sort === "price-desc"
+                  ? "price, high to low"
+                  : "newest first"}
+            </p>
+          }
+        >
+          {result.products.length === 0 ? (
+            <div className="flex flex-col items-center gap-4 border border-dashed border-line px-6 py-20 text-center">
+              <p className="text-xl">Nothing matches those filters</p>
+              <p className="max-w-sm text-sm text-muted-foreground">
+                Clear a filter to see the full {collection.name} line-up.
               </p>
-              <p className="text-xs text-muted-foreground">
-                Sorted by{" "}
-                {filters.sort === "price-asc"
-                  ? "price, low to high"
-                  : filters.sort === "price-desc"
-                    ? "price, high to low"
-                    : "newest first"}
-              </p>
+              <Link
+                href={base}
+                className="border border-ink bg-ink px-6 py-3 text-[0.72rem] font-semibold tracking-[0.16em] text-cream uppercase"
+              >
+                Clear filters
+              </Link>
             </div>
+          ) : (
+            <ul className="grid grid-cols-2 gap-x-5 gap-y-10 pt-8 sm:gap-x-6 xl:grid-cols-3">
+              {result.products.map((product, i) => (
+                <li key={product.id}>
+                  <ProductCard product={product} index={i} priority={i < 3} />
+                </li>
+              ))}
+            </ul>
+          )}
 
-            {result.products.length === 0 ? (
-              <div className="flex flex-col items-center gap-4 border border-dashed border-line px-6 py-20 text-center">
-                <p className="text-xl">Nothing matches those filters</p>
-                <p className="max-w-sm text-sm text-muted-foreground">
-                  Clear a filter to see the full {collection.name} line-up.
-                </p>
+          {result.totalPages > 1 && (
+            <nav aria-label="Collection pages" className="mt-14 flex justify-center gap-1.5">
+              {Array.from({ length: result.totalPages }, (_, i) => i + 1).map((page) => (
                 <Link
-                  href={base}
-                  className="border border-ink bg-ink px-6 py-3 text-[0.72rem] font-semibold tracking-[0.16em] text-cream uppercase"
+                  key={page}
+                  href={`${base}${toSearchString({ ...filters, page })}`}
+                  aria-current={page === filters.page ? "page" : undefined}
+                  className={
+                    page === filters.page
+                      ? "grid h-10 min-w-10 place-items-center bg-ink px-3 text-sm font-semibold text-cream tabular-nums"
+                      : "grid h-10 min-w-10 place-items-center border border-line px-3 text-sm tabular-nums transition-colors hover:border-ink"
+                  }
                 >
-                  Clear filters
+                  {page}
                 </Link>
-              </div>
-            ) : (
-              <ul className="grid grid-cols-2 gap-x-5 gap-y-10 pt-8 sm:gap-x-6 xl:grid-cols-3">
-                {result.products.map((product, i) => (
-                  <li key={product.id}>
-                    <ProductCard product={product} index={i} priority={i < 3} />
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {result.totalPages > 1 && (
-              <nav aria-label="Collection pages" className="mt-14 flex justify-center gap-1.5">
-                {Array.from({ length: result.totalPages }, (_, i) => i + 1).map((page) => (
-                  <Link
-                    key={page}
-                    href={`${base}${toSearchString({ ...filters, page })}`}
-                    aria-current={page === filters.page ? "page" : undefined}
-                    className={
-                      page === filters.page
-                        ? "grid h-10 min-w-10 place-items-center bg-ink px-3 text-sm font-semibold text-cream tabular-nums"
-                        : "grid h-10 min-w-10 place-items-center border border-line px-3 text-sm tabular-nums transition-colors hover:border-ink"
-                    }
-                  >
-                    {page}
-                  </Link>
-                ))}
-              </nav>
-            )}
-          </div>
-        </div>
+              ))}
+            </nav>
+          )}
+        </FilterableLayout>
       </div>
     </div>
   );
